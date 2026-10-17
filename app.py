@@ -17,8 +17,6 @@ st.set_page_config(page_title="BuildWatch", page_icon="🛠️")
 st.title("🛠️ BuildWatch")
 st.caption("Paste a failed build/CI log below and get an instant, offline diagnosis.")
 
-# Optional convenience: let the demo pick a pre-loaded sample log instead of
-# typing/pasting live, so you always have a reliable fallback mid-recording.
 preset = st.selectbox(
     "Load a sample log (optional)",
     ["-- paste your own below --"] + list(LOGS.keys()),
