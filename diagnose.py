@@ -11,11 +11,8 @@ Run:
 import requests
 
 OLLAMA_URL = "http://localhost:11434/api/generate"
-MODEL = "phi3:mini"  # swap to "gemma2:2b" to compare
+MODEL = "phi3:mini"  
 
-# --- The prompt is the most important part of this whole prototype. ---
-# It fixes the exact output format so later steps (Streamlit, then the
-# Android UI) can rely on always getting the same 3 labeled lines back.
 SYSTEM_PROMPT = """You are BuildWatch, a CI/CD build failure triage assistant.
 You will be given the raw log output of a failed build or CI job.
 
@@ -31,8 +28,6 @@ Rules:
 - Keep each line short enough to read at a glance on a phone screen.
 """
 
-# One real (representative) failed CI log, hardcoded for now.
-# Swap this out with logs pulled from actual GitHub Actions runs as you test.
 SAMPLE_LOG = """
 Run npm ci
 npm ERR! code ERESOLVE
